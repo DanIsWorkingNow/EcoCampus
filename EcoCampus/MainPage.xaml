@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoCampus.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <!-- Title -->
+            <Label
+                Text="PaceMark"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level2" />
+            <Image
+                Source="pacemark.png"
+                HeightRequest="130"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+
+            <Label
+                Text="Welcome to &#10;PaceMark"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level4"
+                SemanticProperties.Description="Welcome to dot net Multi platform App UI" />
+
+            <!-- Input fields for waste categories -->
+            <StackLayout>
+                <Entry x:Name="inputPlastic" Placeholder="Enter time of run in seconds" Keyboard="Numeric"/>
+                <Entry x:Name="inputMetal" Placeholder="Enter distance of run in meter" Keyboard="Numeric"/>
+                <Entry x:Name="inputPaper" Placeholder="Enter pace of run in meter" Keyboard="Numeric"/>
+            </StackLayout>
+
+            <!-- Buttons for calculate and reset -->
+            <FlexLayout Direction="Row"
+                AlignItems="Center"
+                JustifyContent="SpaceEvenly">
+                <Button x:Name="calculateButton" Text="Calculate" VerticalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="150" BackgroundColor="OrangeRed" TextColor="White" Clicked="OnCalculateWaste" />
+                <Button x:Name="resetButton" Text="Reset" VerticalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="150" BackgroundColor="SlateGray" TextColor="White" Clicked="OnReset" />
+            </FlexLayout>
+
+            <!-- Display result label -->
+            <Label x:Name="outputResult" Text="0.00" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="20"/>
+
+            <FlexLayout Direction="Row"
+                    AlignItems="Center"
+                    JustifyContent="SpaceEvenly">
+                <ImageButton Source="house.png"
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         IsVisible="true"
+                         HorizontalOptions="End"
+                         />
+                <Label Text="Choose a date" HorizontalTextAlignment="Start" />
+                <DatePicker x:Name="selectDate" DateSelected="onDatePickerSelected" WidthRequest="90" HeightRequest="50" HorizontalOptions="Start" Format="dd/MM/yyyy"  />
+            </FlexLayout>
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <Button x:Name="saveButton" Text="Save" VerticalOptions="CenterAndExpand" BackgroundColor="Black" Clicked="OnSaveRecord"/>
+            </StackLayout>
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+

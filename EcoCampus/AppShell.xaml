@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="EcoCampus.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:EcoCampus"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.BackgroundColor="OrangeRed"
+Shell.TitleColor="White"
+    
+    Title="PaceMark">
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout>
+            <Label Text="MENU LIST" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+
+    <ShellContent
+        Title="PaceMark"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    
+    <ShellContent
+    Title="Track Record"
+    ContentTemplate="{DataTemplate local:Record}"
+    Route="Record" />
+
+    <ShellContent
+Title="Track Information"
+ContentTemplate="{DataTemplate local:Information}"
+Route="Information" />
+
+
+    <ShellContent
+ Title="Improvement Tips"
+ ContentTemplate="{DataTemplate local:RecTips}"
+ Route="RecTips" />
+
+
+    <ShellContent
+Title="About Page"
+ContentTemplate="{DataTemplate local:About}"
+Route="About" />
+
+
+
+</Shell>

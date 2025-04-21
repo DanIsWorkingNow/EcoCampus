@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoCampus.RecTips"
+             Title="Pace Goal and Lap Split">
+    <VerticalStackLayout Padding="10">
+        <!-- Title for the page -->
+        <Label 
+            Text="Set Pace Goal and Lap Split"
+            FontSize="28"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontAttributes="Bold"
+            TextColor="OrangeRed" />
+
+        <!-- Description -->
+        <Label 
+            Text="You can manually set your pace goal and set the desired lap splits!"
+            FontSize="16"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Margin="0,10,0,20" />
+
+        <!-- Input fields for waste categories -->
+        <StackLayout>
+            <Entry x:Name="inputPlastic" Placeholder="Enter time of run in seconds" Keyboard="Numeric"/>
+            <Entry x:Name="inputMetal" Placeholder="Enter distance of run in meter" Keyboard="Numeric"/>
+            <Entry x:Name="inputPaper" Placeholder="Enter pace of run in meter" Keyboard="Numeric"/>
+        </StackLayout>
+
+     
+
+     
+
+        <FlexLayout Direction="Row"
+          AlignItems="Center"
+          JustifyContent="SpaceEvenly">
+            
+           
+        </FlexLayout>
+       
+
+
+        <!-- Buttons for different recycling tips -->
+        <!-- Buttons for each location -->
+        <FlexLayout Direction="Row"
+              AlignItems="Center"
+              JustifyContent="Center"
+              Wrap="Wrap">
+            <Button Text="Set Lap Split" 
+              BackgroundColor="Orange" 
+              TextColor="Black" 
+              WidthRequest="160" 
+              Margin="5" />
+            <Button Text="Set Target Pace" 
+              BackgroundColor="Orange" 
+              TextColor="Black" 
+              WidthRequest="160" 
+              Margin="5" />
+            <Button Text="Save" 
+              BackgroundColor="SkyBlue" 
+              TextColor="Black" 
+              WidthRequest="160" 
+              Margin="5" />
+            <Button Text="Reset" 
+              BackgroundColor="LightGray" 
+              TextColor="Black" 
+              WidthRequest="160" 
+              Margin="5" />
+        </FlexLayout>
+        <!-- Button to navigate back to MainPage -->
+        <Button Text="Back to Main Page"
+          BackgroundColor="Maroon"
+          TextColor="White"
+          VerticalOptions="Center"
+          HorizontalOptions="Center"
+          Clicked="OnBackToMainPageClicked" />
+    </VerticalStackLayout>
+</ContentPage>

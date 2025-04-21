@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoCampus.WasteLoc"
+             Title="Recycle Pickup Location">
+    <VerticalStackLayout Padding="10">
+        <!-- Title for the page -->
+        <Label 
+            Text="Below is the Recycle Pickup Location in UNITEN"
+            FontSize="24"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            VerticalOptions="StartAndExpand" />
+
+        <!-- Image of the map showing locations -->
+        <Image
+            Source="wasteloc.png"
+            Aspect="AspectFill"
+            HorizontalOptions="FillAndExpand"
+            HeightRequest="300" />
+
+        <!-- Buttons for each location -->
+        <FlexLayout Direction="Row"
+                    AlignItems="Center"
+                    JustifyContent="Center"
+                    Wrap="Wrap">
+            <Button Text="Upten Sport Arena" 
+                    BackgroundColor="LightGreen" 
+                    TextColor="Black" 
+                    WidthRequest="160" 
+                    Margin="5" />
+            <Button Text="Dewan Sri Sarjana" 
+                    BackgroundColor="LightGreen" 
+                    TextColor="Black" 
+                    WidthRequest="160" 
+                    Margin="5" />
+            <Button Text="Ilmu Residensi" 
+                    BackgroundColor="LightGreen" 
+                    TextColor="Black" 
+                    WidthRequest="160" 
+                    Margin="5" />
+            <Button Text="Murni Residensi" 
+                    BackgroundColor="LightGreen" 
+                    TextColor="Black" 
+                    WidthRequest="160" 
+                    Margin="5" />
+        </FlexLayout>
+        <!-- Button to navigate back to MainPage -->
+        <Button Text="Back to Main Page"
+                BackgroundColor="DarkGreen"
+                TextColor="White"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Clicked="OnBackToMainPageClicked" />
+    </VerticalStackLayout>
+</ContentPage>
