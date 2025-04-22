@@ -1,36 +1,42 @@
+using System;
+using System.IO;
+using Microsoft.Maui.Controls;
+
 namespace EcoCampus
 {
     public partial class Record : ContentPage
     {
-        string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "WasteRecord.txt");
+        // Same filename as MainPage!
+        readonly string fileName = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"RunRecords.txt");
 
         public Record()
         {
             InitializeComponent();
-            if (File.Exists(fileName))
-            {
+        }
+
+        // Every time this page comes into view, reload the latest file
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            LoadRecords();
+        }
+
+        void LoadRecords()
+        {
+            if (File.Exists(fileName) && new FileInfo(fileName).Length > 0)
                 displayRecord.Text = File.ReadAllText(fileName);
-            }
             else
-            {
                 displayRecord.Text = "No records available.";
-            }
         }
 
         private void OnClearRecordClicked(object sender, EventArgs e)
         {
-            if (File.Exists(fileName))
-            {
-                // Clear the file content
-                File.WriteAllText(fileName, string.Empty);
+            // Erase the file
+            File.WriteAllText(fileName, string.Empty);
 
-                // Update the display label
-                displayRecord.Text = "Records cleared successfully.";
-            }
-            else
-            {
-                displayRecord.Text = "No records available to clear.";
-            }
+            // And immediately refresh the display
+            LoadRecords();
         }
     }
 }
