@@ -7,6 +7,7 @@
     Shell.FlyoutBehavior="Flyout"
     Shell.BackgroundColor="OrangeRed"
 Shell.TitleColor="White"
+    FlyoutIcon="runner.png"
     
     Title="PaceMark">
     <Shell.FlyoutHeader>
