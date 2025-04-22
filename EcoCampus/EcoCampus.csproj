@@ -21,7 +21,7 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>EcoCampus</ApplicationTitle>
+		<ApplicationTitle>PaceMark</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.ecocampus</ApplicationId>
@@ -42,7 +42,7 @@
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\recycle.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\shoes.svg" Color="white" Resize="True"/> 
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
