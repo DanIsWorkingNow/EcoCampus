@@ -26,23 +26,45 @@
                 SemanticProperties.HeadingLevel="Level4"
                 SemanticProperties.Description="Welcome to dot net Multi platform App UI" />
 
-            <!-- Input fields for waste categories -->
-            <StackLayout>
-                <Entry x:Name="inputPlastic" Placeholder="Enter time of run in seconds" Keyboard="Numeric"/>
-                <Entry x:Name="inputMetal" Placeholder="Enter distance of run in meter" Keyboard="Numeric"/>
-                <Entry x:Name="inputPaper" Placeholder="Enter pace of run in meter" Keyboard="Numeric"/>
+            <!-- Input fields for running metrics -->
+            <StackLayout Spacing="15">
+                <Entry x:Name="inputTimeSeconds"
+                       Placeholder="Enter time (seconds)"
+                       Keyboard="Numeric"
+                       Text="" />
+                <Entry x:Name="inputDistanceMeters"
+                       Placeholder="Enter distance (meters)"
+                       Keyboard="Numeric"
+                       Text="" />
             </StackLayout>
 
             <!-- Buttons for calculate and reset -->
             <FlexLayout Direction="Row"
-                AlignItems="Center"
-                JustifyContent="SpaceEvenly">
-                <Button x:Name="calculateButton" Text="Calculate" VerticalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="150" BackgroundColor="OrangeRed" TextColor="White" Clicked="OnCalculateWaste" />
-                <Button x:Name="resetButton" Text="Reset" VerticalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="150" BackgroundColor="SlateGray" TextColor="White" Clicked="OnReset" />
+                        AlignItems="Center"
+                        JustifyContent="SpaceEvenly"
+                        Margin="0,10">
+                <Button x:Name="calculateButton"
+                        Text="Calculate Pace"
+                        WidthRequest="150"
+                        HeightRequest="50"
+                        BackgroundColor="OrangeRed"
+                        TextColor="White"
+                        Clicked="OnCalculatePace" />
+                <Button x:Name="resetButton"
+                        Text="Reset"
+                        WidthRequest="150"
+                        HeightRequest="50"
+                        BackgroundColor="SlateGray"
+                        TextColor="White"
+                        Clicked="OnReset" />
             </FlexLayout>
 
             <!-- Display result label -->
-            <Label x:Name="outputResult" Text="0.00" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="20"/>
+            <Label x:Name="outputResult"
+                   Text="Your pace will appear here"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"
+                   FontSize="18" />
 
             <FlexLayout Direction="Row"
                     AlignItems="Center"
@@ -57,7 +79,12 @@
                 <DatePicker x:Name="selectDate" DateSelected="onDatePickerSelected" WidthRequest="90" HeightRequest="50" HorizontalOptions="Start" Format="dd/MM/yyyy"  />
             </FlexLayout>
             <StackLayout HorizontalOptions="FillAndExpand">
-                <Button x:Name="saveButton" Text="Save" VerticalOptions="CenterAndExpand" BackgroundColor="Black" Clicked="OnSaveRecord"/>
+                <Button x:Name="saveButton"
+                    Text="Save Record"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    HeightRequest="50"
+                    Clicked="OnSaveRecord" />
             </StackLayout>
 
 
